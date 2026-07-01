@@ -1,0 +1,30 @@
+CC				= arm-none-eabi-gcc
+LD				= arm-none-eabi-ld
+OBJCOPY		= arm-none-eabi-objcopy
+
+CCFLAGS		= -Iinclude -mthumb -mcpu=cortex-m3 -O0 -ggdb
+LDFALGS		= -Tlinker/main.ld -Map=main.map
+
+SRCS			= \
+						startup/startup.c \
+						src/main.c	\
+						src/flash.c	\
+						src/spi.c	\
+
+OBJS			= $(SRCS:.c=.o)
+
+all:	main.bin
+
+%.o: %.c
+	$(CC) $(CCFLAGS) -c $< -o $@ 
+
+main.elf: $(OBJS)
+	$(LD) $(LDFALGS) $^ -o $@
+
+main.bin:	main.elf
+	$(OBJCOPY) -O binary $< $@
+
+clean:
+	rm -rf $(OBJS) main.elf main.map main.bin
+
+.PHONY:	all, clean
