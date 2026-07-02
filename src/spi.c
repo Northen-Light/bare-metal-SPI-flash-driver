@@ -35,7 +35,7 @@ uint8_t spi1_transfer(uint8_t tx) {
 }
 
 void spi1_wait_non_busy(void) {
-  while(!(SPI1_SR & (1 << 7)));
+  while(SPI1_SR & (1 << 7));
 }
 
 static void spi1_wait_txe(void) {

@@ -27,4 +27,7 @@ main.bin:	main.elf
 clean:
 	rm -rf $(OBJS) main.elf main.map main.bin
 
+flash:
+	st-flash write main.bin 0x08000000 
+
 .PHONY:	all, clean
