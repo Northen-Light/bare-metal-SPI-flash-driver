@@ -21,5 +21,6 @@ void flash_read_status_register1(uint8_t *status);
 flash_status_t flash_write_enable(void);
 void flash_page_program(uint32_t address, const uint8_t *buffer, uint32_t length);
 void flash_read(uint32_t address, uint8_t *buffer, uint32_t length);
+void flash_sector_erase(uint32_t address);
 
 #endif

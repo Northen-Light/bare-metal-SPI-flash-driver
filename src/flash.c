@@ -76,6 +76,19 @@ void flash_read(uint32_t address, uint8_t *buffer, uint32_t length) {
   flash_deselect();
 }
 
+void flash_sector_erase(uint32_t address) {
+  flash_wait_until_ready();
+  
+  if (flash_write_enable() != FLASH_WEL_OK)
+    return;
+
+  flash_select();
+  spi1_transfer(FLASH_CMD_SECTOR_ERASE); 
+  flash_send_address(address);   
+  flash_deselect();
+  flash_wait_until_ready();
+}
+
 static void flash_send_address(uint32_t address) {
   spi1_transfer((address >> 16) & 0xFF);
   spi1_transfer((address >> 8) & 0xFF);
