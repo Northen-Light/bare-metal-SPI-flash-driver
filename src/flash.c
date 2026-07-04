@@ -71,7 +71,7 @@ void flash_read(uint32_t address, uint8_t *buffer, uint32_t length) {
   flash_send_address(address);
 
   while (ptr < length) 
-    buffer[ptr++] = spi1_transfer(0xFFU);
+    buffer[ptr++] = spi1_transfer(FLASH_DUMMY_BYTE);
 
   flash_deselect();
 }
