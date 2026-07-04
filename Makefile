@@ -2,7 +2,7 @@ CC				= arm-none-eabi-gcc
 LD				= arm-none-eabi-ld
 OBJCOPY		= arm-none-eabi-objcopy
 
-CCFLAGS		= -Iinclude -mthumb -mcpu=cortex-m3 -O0 -ggdb
+CCFLAGS		= -Iinclude -mthumb -mcpu=cortex-m3 -O0 -ggdb -Wall -Wextra -Wconversion
 LDFALGS		= -Tlinker/main.ld -Map=main.map
 
 SRCS			= \

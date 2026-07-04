@@ -1,2 +1,7 @@
-#define FLASH_CMD_JEDEC_ID      0x9F
-#define FLASH_DUMMY_BYTE        0xFF
+#define FLASH_CMD_PAGE_PROGRAM    0x02U
+#define FLASH_CMD_READ_DATA       0x03U
+#define FLASH_CMD_WRITE_DISABLE   0x04U
+#define FLASH_CMD_READ_STATUS     0x05U
+#define FLASH_CMD_WRITE_ENABLE    0x06U
+#define FLASH_CMD_JEDEC_ID        0x9FU
+#define FLASH_DUMMY_BYTE          0xFFU
