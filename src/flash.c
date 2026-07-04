@@ -90,9 +90,9 @@ void flash_sector_erase(uint32_t address) {
 }
 
 static void flash_send_address(uint32_t address) {
-  spi1_transfer((address >> 16) & 0xFF);
-  spi1_transfer((address >> 8) & 0xFF);
-  spi1_transfer(address & 0xFF);
+  spi1_transfer((address >> 16U) & 0xFFU);
+  spi1_transfer((address >> 8U) & 0xFFU);
+  spi1_transfer(address & 0xFFU);
 }
 
 static void flash_wait_until_ready(void) {
