@@ -24,6 +24,6 @@ void flash_write(uint32_t address, const uint8_t *in_buffer, uint32_t length);
 void flash_read(uint32_t address, uint8_t *out_buffer, uint32_t length);
 void flash_sector_erase(uint32_t address);
 void flash_chip_erase(void);
-void flash_64KB_block_erase(uint32_t address);
+void flash_block_erase_64KB(uint32_t address);
 
 #endif

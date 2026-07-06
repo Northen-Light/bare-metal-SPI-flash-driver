@@ -106,7 +106,7 @@ void flash_sector_erase(uint32_t address) {
   flash_deselect();
 }
 
-void flash_64KB_block_erase(uint32_t address) {
+void flash_block_erase_64KB(uint32_t address) {
   flash_wait_until_ready();
   
   if (flash_write_enable() != FLASH_WEL_OK)

@@ -14,7 +14,7 @@ int main(void) {
   spi1_init();
   flash_init();
   flash_read_jedec_id(&id);
-  flash_64KB_block_erase(0x000000U);
+  flash_block_erase_64KB(0x000000U);
   flash_write(0x0000F0U, in_buffer, 600U);
   flash_read(0x0000F0U, out_buffer, 600U);
 
